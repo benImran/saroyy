@@ -17,6 +17,16 @@ const pxtorem = require('gulp-pxtorem');
 
 const isProd = process.env.NODE_ENV === 'production';
 
+
+/**
+ * TEMPLATE
+ */
+function templates() {
+    return gulp.src('app/*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(sync.stream());
+}
+
 /**
  * SCSS
  */
@@ -27,12 +37,6 @@ function scss() {
         .pipe(gulpif(isProd, minifyCSS()))
         .pipe(gulpif(!isProd, sourcemaps.write('.')))
         .pipe(gulp.dest('dist/css'))
-        .pipe(sync.stream());
-}
-
-function html() {
-    return gulp.src('app/**/*.html')
-        .pipe(gulp.dest('dist/'))
         .pipe(sync.stream());
 }
 
@@ -81,9 +85,9 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts, js)));
+gulp.task('build', gulp.series(clean, gulp.parallel(templates, scss, images, fonts, js)));
 
-gulp.task('default', gulp.parallel(html, scss, images, fonts, js, function(done) {
+gulp.task('default', gulp.parallel(templates, scss, images, fonts, js, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
@@ -91,7 +95,7 @@ gulp.task('default', gulp.parallel(html, scss, images, fonts, js, function(done)
     });
 
     gulp.watch('app/**/*.scss', scss);
-    gulp.watch('app/*.html', html);
+    gulp.watch('app/*.html', templates);
     gulp.watch('app/**/*.js', js);
 
     done();
