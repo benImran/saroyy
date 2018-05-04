@@ -1,0 +1,35 @@
+
+.form__field {
+    margin-bottom: 2rem;
+}
+
+.form__field-wrapper {
+    .form__field:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// labels
+.form__label {
+    display: block;
+    font-weight: $fsemibold;
+    margin-bottom: .5rem;
+}
+
+
+// input text
+.form__input-text--big {
+    display: block;
+    width: 100%;
+    padding: 0 0 .5rem 0;
+    border: none;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: $size15;
+    font-weight: $flight;
+}
+
+// messages
+.form__msg--empty {
+    font-weight: $flight; 
+    color: #5C5C5C;
+}
