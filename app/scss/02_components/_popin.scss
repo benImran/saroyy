@@ -1,0 +1,62 @@
+.overlay__black {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    opacity: .4;
+    z-index: -1;
+}
+
+.popin__outer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// WRAPPER
+.popin {
+    width: 60%;
+}
+
+// HEAD
+.popin__head {
+    margin-bottom: 1rem;
+    text-align: right;
+    font-weight: $flight;
+    color: #fff;
+}
+
+// BODY
+.popin__body {
+    background: #fff;
+    padding: 2.5rem 0 3.5rem 0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.popin__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.popin__main {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+// popin side sizes
+.popin__side-right--lg {
+    width: 65%;
+}
+
+.popin__side-left--sm {
+    width: 30%;
+}
+
+.popin__thumbnail {
+    margin: 0 auto;
+}
+

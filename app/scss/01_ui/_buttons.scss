@@ -1,0 +1,17 @@
+.btn__outer--center {
+    text-align: center;
+}
+
+.btn {
+    padding: .85rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: $fsemibold;
+    font-size: $sizeRg;
+}
+
+.btn__black {
+    @extend .btn;
+    background: #252525;
+    color: #fff;
+}
